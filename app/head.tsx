@@ -13,7 +13,7 @@ export default function Head() {
       <meta
         name="url"
         property="og:url"
-        content="https://innov.int.vercel.app/"
+        content="https://innovative-interiors.vercel.app/"
       />
       <meta name="type" property="og:type" content="website" />
       <meta name="title" property="og:title" content="Innovative interiors" />
@@ -25,13 +25,16 @@ export default function Head() {
       <meta
         name="image"
         property="og:image"
-        content="https://innov-int.vercel.app/og/og_image.png"
+        content="https://innovative-interiors.vercel.app/og/og_image.png"
       />
 
       {/* <!-- Twitter Meta Tags --> */}
       <meta name="twitter:card" content="app" />
       <meta property="twitter:domain" content="innov-int.vercel.app" />
-      <meta property="twitter:url" content="https://innov-int.vercel.app/" />
+      <meta
+        property="twitter:url"
+        content="https://innovative-interiors.vercel.app/"
+      />
       <meta name="twitter:title" content="Innovative interiors" />
       <meta
         name="twitter:description"
@@ -39,7 +42,7 @@ export default function Head() {
       />
       <meta
         name="twitter:image"
-        content="https://cellafarm.vercel.app/og/og_image.png"
+        content="https://innovative-interiors.vercel.app/og/og_image.png"
       />
       {/* -------twitter end------- */}
 

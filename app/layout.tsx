@@ -15,11 +15,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${pop.className} overflow-x-hidden scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-emerald-800 selection:bg-slate-500`}
+      className={`${pop.className} overflow-x-hidden scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-[#325e52] selection:bg-slate-500`}
     >
       <head />
       <body className="bg-[#fafafa]">
-        <header id="header" className="absolute top-10 z-20">
+        <header id="header" className="z-20">
           <Header />
         </header>
 

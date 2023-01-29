@@ -13,14 +13,27 @@ export default function Natural_Insp({}: Props) {
     <div className="w-full bg-[#fafafa] pb-20 pt-36 lg:pt-52">
       <div className="relative mx-auto max-w-[2500px]">
         {/* //background */}
-        <Image
-          src={star}
-          height={800}
-          width={800}
-          style={{ aspectRatio: "auto" }}
-          alt={"background_star"}
-          className="absolute -top-1/2 -right-[20%] hidden opacity-10 -hue-rotate-[10deg] lg:flex"
-        />
+        <motion.figure
+          viewport={{ once: true }}
+          initial={{ rotate: 0, scale: 0, opacity: 0.05 }}
+          whileInView={{ rotate: 300, scale: 1, opacity: 0.1 }}
+          transition={{
+            duration: 0.4,
+            type: "spring",
+            damping: 35,
+            stiffness: 50,
+          }}
+          className="absolute -top-1/2 -right-[20%] hidden h-[800px] w-[800px] -hue-rotate-[10deg] lg:flex"
+        >
+          <Image
+            src={star}
+            height={800}
+            width={800}
+            style={{ aspectRatio: "auto" }}
+            alt={"background_star"}
+            className="h-full w-full"
+          />
+        </motion.figure>
         <div className="flex flex-col items-center gap-y-14 lg:mr-16 lg:flex-row lg:gap-x-24 xl:mr-28">
           <motion.figure
             viewport={{ once: true }}

@@ -14,14 +14,27 @@ export default function Footer({}: Props) {
     <div className="w-full overflow-hidden bg-[#325e52]">
       <div className="relative mx-auto flex max-w-[2500px] flex-col gap-y-20 divide-y-2 divide-emerald-800/25 py-12 px-4 pt-24 xs:px-16 sm:gap-y-36 sm:py-20 sm:pt-36 lg:px-20 xl:px-28">
         {/* //background */}
-        <Image
-          src={star}
-          height={800}
-          width={800}
-          style={{ aspectRatio: "auto" }}
-          alt={"background_star"}
-          className="absolute -top-1/4 -left-[20%] mx-auto hidden opacity-10 -hue-rotate-[10deg] lg:flex"
-        />
+        <motion.figure
+          viewport={{ once: true }}
+          initial={{ rotate: 0, scale: 0, opacity: 0.05 }}
+          whileInView={{ rotate: 300, scale: 1, opacity: 0.1 }}
+          transition={{
+            duration: 0.4,
+            type: "spring",
+            damping: 35,
+            stiffness: 50,
+          }}
+          className="absolute -top-1/4 -left-[20%] hidden h-[800px] w-[800px] -hue-rotate-[10deg] lg:flex"
+        >
+          <Image
+            src={star}
+            height={800}
+            width={800}
+            style={{ aspectRatio: "auto" }}
+            alt={"background_star"}
+            className="h-full w-full"
+          />
+        </motion.figure>
         <div className="flex flex-col justify-center gap-y-6 text-center md:flex-row md:justify-between md:text-start xl:gap-x-32">
           <motion.div
             viewport={{ once: true }}

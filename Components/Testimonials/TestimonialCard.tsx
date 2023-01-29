@@ -2,7 +2,7 @@ import { StarIcon } from "@heroicons/react/24/solid";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import { FaTwitter } from "react-icons/fa";
-import image1 from "@/public/Images/profile pictures/5.png";
+import image1 from "@/public/images/profile pictures/5.png";
 
 type Props = {
   name?: string;

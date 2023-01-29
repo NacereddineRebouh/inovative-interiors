@@ -13,10 +13,6 @@ import image6 from "../../public/images/natural/4.jpg";
 import image7 from "../../public/images/natural/3.jpg";
 
 import cssMod from "@/styles/swiper.module.css";
-// import "swiper/css/bundle";
-// //import "swiper/css";
-// import "swiper/css/pagination";
-// import "swiper/css/navigation";
 import "@/styles/globals.css";
 require("swiper/swiper-bundle.css");
 

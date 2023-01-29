@@ -6,6 +6,12 @@ import Swiper_component from "./Swiper_component";
 import star from "@/public/images/star.png";
 import Image from "next/image";
 
+import cssMod from "@/styles/swiper.module.css";
+import "swiper/css/bundle";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "@/styles/globals.css";
 type Props = {};
 
 export default function Natural_Insp({}: Props) {

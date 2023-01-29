@@ -53,7 +53,7 @@ export default function Swiper_component({}: Props) {
               <Image
                 src={value}
                 // style={{ aspectRatio: 1 / 1 }}
-                alt={""}
+                alt={"interior_Image"}
                 width={1000}
                 height={1000}
                 className="aspect-[9/10] flex-none object-cover"
@@ -64,12 +64,13 @@ export default function Swiper_component({}: Props) {
       </Swiper>
       <div className="absolute top-0 bottom-0 left-20 z-10 flex items-center">
         <button
+          aria-label="nextSlide"
           onClick={() => swiperRef.current?.slideNext()}
           className={
-            "flex aspect-square h-16 items-center justify-center rounded-full bg-[#ffa63a] transition-all duration-100 active:scale-95"
+            "flex aspect-square h-16 items-center justify-center rounded-full bg-[#ffa63a] transition-all duration-200 hover:bg-[#ffb151] active:scale-95"
           }
         >
-          <ArrowRightIcon className="h-7 w-7 text-stone-800" />
+          <ArrowRightIcon className="h-6 w-6 text-stone-800 sm:h-7 sm:w-7" />
         </button>
       </div>
     </>

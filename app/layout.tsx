@@ -5,8 +5,7 @@ const pop = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 import "../styles/globals.css";
-import Hero from "@/Components/Hero/Hero";
-import Natural_Insp from "@/Components/Natural Inspiration/Natural_Insp";
+import Footer from "@/Components/Footer/Footer";
 
 export default function RootLayout({
   children,
@@ -14,20 +13,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${pop.className}`}>
+    <html
+      lang="en"
+      className={`${pop.className} overflow-x-hidden scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-emerald-800 selection:bg-slate-500`}
+    >
       <head />
-      <body className="bg-[#325e52]">
-        <section id="header" className="absolute top-10 z-10">
+      <body className="bg-[#fafafa]">
+        <header id="header" className="absolute top-10 z-20">
           <Header />
-        </section>
-        {/* Hero */}
-        <section>
-          <Hero />
-        </section>
-        <section>
-          <Natural_Insp />
-        </section>
-        {children}
+        </header>
+
+        <main>{children}</main>
+        <footer id="footer" className="">
+          <Footer />
+        </footer>
       </body>
     </html>
   );

@@ -19,20 +19,32 @@ export default function Header({}: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-screen text-zinc-100">
-      <Menu as="div" className="mx-auto max-w-[2500px] flex flex-col">
-        <div className="mx-5 h-20 flex min-h-[48px] items-center justify-between sm:mx-16 xl:mx-28">
+    <div className="w-screen select-none bg-[#325e52] text-zinc-100">
+      <Menu as="div" className="mx-auto flex max-w-[2500px] flex-col">
+        <div className="mx-5 flex h-20 min-h-[48px] items-center justify-between sm:mx-16 xl:mx-28">
           {/* logo & navigation*/}
-          <div className="relative flex gap-x-16 items-center justify-start">
+          <motion.div
+            viewport={{ once: true }}
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              type: "spring",
+              damping: 15,
+              stiffness: 50,
+            }}
+            className="relative flex items-center justify-start gap-x-16"
+          >
             <Link
               href="/"
-              className="flex justify-start relative cursor-pointer w-[150px]"
+              className="relative flex w-[150px] cursor-pointer justify-start"
+              title="innovativeInteriors_logo"
             >
               <Image src={logo} alt={""} className="h-9 object-contain" />
             </Link>
 
             {/* navigation */}
-            <div className="items-center gap-x-2 lg:gap-x-4 text-stone-100/50 lg:flex hidden">
+            <nav className="hidden items-center gap-x-2 text-stone-100/50 lg:flex lg:gap-x-4">
               <Link
                 className="hidden flex-auto items-center truncate rounded-2xl py-3 px-4 transition-all duration-300 hover:text-zinc-100 sm:flex"
                 href="#"
@@ -63,22 +75,34 @@ export default function Header({}: Props) {
               >
                 Parternship
               </Link>
-            </div>
-          </div>
+            </nav>
+          </motion.div>
 
           {/* CTA */}
-          <div className="cursor-pointer hidden lg:flex select-none bg-[#ffa63a] px-7 font-medium py-4 text-base text-zinc-900 transition-all duration-100 hover:bg-[#fdaa45] active:scale-95">
+          <motion.button
+            viewport={{ once: true }}
+            initial={{ x: 200, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              duration: 0.4,
+              type: "spring",
+              damping: 15,
+              stiffness: 50,
+            }}
+            className="hidden cursor-pointer select-none bg-[#ffa63a] px-7 py-4 text-base font-medium text-zinc-900 transition-all duration-100 hover:bg-[#fdaa45] active:scale-95 lg:flex"
+          >
             Consultation
-          </div>
+          </motion.button>
           <Menu.Button
             onClick={() => setIsOpen((isOpen) => !isOpen)}
-            className="flex lg:hidden "
+            className="flex lg:hidden"
+            aria-label="openNavigation"
           >
             {({ open }) => (
               <div
                 className={`flex cursor-pointer transition-all duration-200 ${
                   open ? "bg-[#ff8c00]/100" : "bg-[#ff8c00]/0"
-                } p-2 font-medium text-sm text-zinc-900 active:scale-95 select-none`}
+                } select-none p-2 text-sm font-medium text-zinc-900 active:scale-95`}
               >
                 <HiOutlineMenuAlt3
                   className={`h-7 w-7 ${
@@ -98,9 +122,9 @@ export default function Header({}: Props) {
           leaveFrom="transform opacity-100 "
           leaveTo="transform opacity-0 "
         >
-          <Menu.Items className="text-sm text-gray-500 sm:mx-16 xl:mx-28 mx-5">
+          <Menu.Items className="mx-5 text-sm text-gray-500 sm:mx-16 xl:mx-28">
             {({ open }) => (
-              <div className="flex lg:hidden overflow-hidden">
+              <div className="flex overflow-hidden lg:hidden">
                 <AnimatePresence>
                   {open && (
                     <motion.div
@@ -113,12 +137,12 @@ export default function Header({}: Props) {
                       exit={{
                         height: 0,
                       }}
-                      className={"w-full flex flex-col gap-y-2 "}
+                      className={"flex w-full flex-col gap-y-2 "}
                     >
-                      <div className="cursor-pointer select-none bg-[#ffa63a] px-7 font-medium py-3 text-sm text-zinc-900 transition-all duration-100 hover:bg-[#fdaa45] active:scale-95 w-full mt-5">
+                      <button className="mt-5 w-full cursor-pointer select-none bg-[#ffa63a] px-7 py-3 text-sm font-medium text-zinc-900 transition-all duration-100 hover:bg-[#fdaa45] active:scale-95">
                         Get started
-                      </div>
-                      <div className="divide-y divide-emerald-900/70 text-green-50/50 w-full py-2">
+                      </button>
+                      <nav className="w-full divide-y divide-emerald-900/70 py-2 text-green-50/50">
                         <Menu.Item>
                           {({ active }) => (
                             <Link
@@ -179,7 +203,7 @@ export default function Header({}: Props) {
                             </Link>
                           )}
                         </Menu.Item>
-                      </div>
+                      </nav>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -193,65 +217,3 @@ export default function Header({}: Props) {
     </div>
   );
 }
-
-// <Disclosure>
-// {({ open }) => (
-//   <>
-//     <div className="mx-5 h-20 flex min-h-[48px] items-center justify-between md:mx-10 lg:mx-16 xl:mx-28">
-//       <div className="relative flex gap-x-14 items-center justify-start">
-//         <Link
-//           href="/"
-//           className="flex justify-start relative cursor-pointer w-[150px]"
-//         >
-//           <Image src={logo} alt={""} className="h-9 object-contain" />
-//         </Link>
-
-//         <div className="items-center gap-x-2 lg:gap-x-4 text-emerald-50/50 lg:flex hidden">
-//           <Link
-//             className="hidden flex-auto items-center truncate rounded-2xl py-3 px-4 transition-all duration-300 hover:text-zinc-100 sm:flex"
-//             href="#"
-//           >
-//             Home
-//           </Link>
-//           <Link
-//             className="hidden flex-auto items-center truncate rounded-2xl py-3 px-4 transition-all duration-300 hover:text-zinc-100 sm:flex"
-//             href="#"
-//           >
-//             Services
-//           </Link>
-//           <Link
-//             className="hidden flex-auto items-center truncate rounded-2xl py-3 px-4 transition-all duration-300 hover:text-zinc-100 sm:flex"
-//             href="#"
-//           >
-//             Blog
-//           </Link>
-//           <Link
-//             className="hidden flex-auto items-center truncate rounded-2xl py-3 px-4 transition-all duration-300 hover:text-zinc-100 sm:flex"
-//             href="#Explore"
-//           >
-//             About us
-//           </Link>
-//           <Link
-//             className="hidden flex-auto items-center truncate rounded-2xl py-3 px-4 transition-all duration-300 hover:text-zinc-100 sm:flex"
-//             href="#"
-//           >
-//             Parternship
-//           </Link>
-//         </div>
-//       </div>
-
-//       <div className="cursor-pointer hidden lg:flex select-none bg-[#ffa63a] px-7 font-medium py-3 text-sm text-zinc-900 transition-all duration-100 hover:bg-[#fdaa45] active:scale-95">
-//         Get started
-//       </div>
-//       <Disclosure.Button className="flex lg:hidden cursor-pointer select-none bg-[#ff8c00] px-7 font-medium py-3 text-sm text-zinc-900 transition-all duration-100 hover:bg-[#fdaa45] active:scale-95">
-//         Get started
-//       </Disclosure.Button>
-//     </div>
-
-//     <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-//       If youre unhappy with your purchase for any reason, email us
-//       within 90 days and well refund you in full, no questions asked.
-//     </Disclosure.Panel>
-//   </>
-// )}
-// </Disclosure>

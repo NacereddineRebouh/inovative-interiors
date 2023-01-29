@@ -6,6 +6,7 @@ const pop = Poppins({
 });
 import "../styles/globals.css";
 import Footer from "@/Components/Footer/Footer";
+import { AnalyticsWrapper } from "@/Components/Analytics/analytics";
 
 export default function RootLayout({
   children,
@@ -27,6 +28,7 @@ export default function RootLayout({
         <footer id="footer" className="">
           <Footer />
         </footer>
+        <AnalyticsWrapper />
       </body>
     </html>
   );

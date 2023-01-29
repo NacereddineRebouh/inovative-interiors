@@ -14,8 +14,9 @@ import image7 from "../../public/images/natural/3.jpg";
 
 import cssMod from "@/styles/swiper.module.css";
 import "swiper/css/bundle";
-import "swiper/css";
+//import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "@/styles/globals.css";
 
 import Image, { StaticImageData } from "next/image";

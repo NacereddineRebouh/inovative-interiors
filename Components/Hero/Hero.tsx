@@ -307,7 +307,7 @@ export default function Hero({}: Props) {
               />
             </motion.figure>
           </div>
-          <div className="absolute -bottom-72 left-0 right-0 z-0 hidden h-[570px] w-full rotate-12 skew-x-12 scale-105 bg-[#fafafa] lg:flex xl:-bottom-80 xl:h-[650px] 3xl:-bottom-96"></div>
+          <div className="absolute -bottom-72 left-0 right-0 z-0 hidden h-[570px] w-full rotate-[14deg] skew-x-[14deg] scale-105 bg-[#fafafa] lg:flex xl:-bottom-80 xl:h-[650px] 3xl:-bottom-96"></div>
         </div>
       </div>
     </div>

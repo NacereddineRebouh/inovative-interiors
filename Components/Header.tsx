@@ -21,7 +21,7 @@ export default function Header({}: Props) {
   return (
     <div className="w-screen select-none bg-[#325e52] text-zinc-100">
       <Menu as="div" className="mx-auto flex max-w-[2500px] flex-col">
-        <div className="mx-5 flex h-36 min-h-[48px] items-center justify-between sm:mx-16 xl:mx-28">
+        <div className="mx-5 flex h-20 min-h-[48px] items-center justify-between sm:mx-16 xl:mx-28">
           {/* logo & navigation*/}
           <motion.div
             viewport={{ once: true }}

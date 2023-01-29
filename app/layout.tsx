@@ -20,7 +20,7 @@ export default function RootLayout({
     >
       <head />
       <body className="bg-[#fafafa]">
-        <header id="header" className="z-20">
+        <header id="header" className="absolute top-10 z-20">
           <Header />
         </header>
 

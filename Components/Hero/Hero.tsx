@@ -13,7 +13,8 @@ type Props = {};
 export default function Hero({}: Props) {
   return (
     <div className="w-full bg-[#325e52]">
-      <div className="relative mx-auto max-w-[2500px] pt-6 lg:pt-14">
+      <div className="relative mx-auto max-w-[2500px] pt-36 lg:pt-40">
+        {/* pt-6 lg:pt-14 */}
         <div className="flex flex-row items-start lg:ml-16 xl:ml-28">
           {/* CTA and headline */}
           <div className="absolute z-10 flex w-full flex-col items-center justify-center gap-y-7 pt-20 text-center sm:gap-y-14 md:gap-y-24 md:pt-28 lg:relative lg:w-1/2 lg:justify-start lg:gap-y-7 lg:pt-8 lg:pr-10 lg:text-start xl:pr-24 2xl:pr-40">

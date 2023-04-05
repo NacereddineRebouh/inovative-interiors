@@ -4,7 +4,6 @@ This website was built using Next.js, NextAuth, TypeScript, Tailwind CSS, and va
 
 ## Built With
 - [Next.js](https://nextjs.org/)
-- [NextAuth](https://next-auth.js.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [React Responsive Carousel](https://react-responsive-carousel.js.org/)
